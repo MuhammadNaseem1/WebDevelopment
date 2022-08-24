@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<ol type="1">
+<li>Home Page</li>
+<li> Link page</li>
+<ol type="I">
+<li> Links to search engines</li>
+<li> Links to information sites</li>
+<li type="A">
+<li>New Site<li>
+<ol type="i">
+<li>TV based</li>
+<ol type="a">
+<li>CNN</li>
+<li>Headline</li>
+<ol/>
+</ol>
+<li>StockSite</li>
+</ol>
+<li> Links to Funsite</li></ol>
+<li>Contact Page</ol></ol>
+
+
+</body>
+
+
+
+
+
+</html>
