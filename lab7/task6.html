@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <style>
+        .col-md-4
+        {
+            display: inline;
+        }
+        .form-control
+        {
+
+            /* 
+            data_array.sort(function (x, y) {
+    return x.ratings - y.ratings;
+});
+       data_array.sort(function (x, y) {
+    return  x.name == y.name ? 0 : x.name > y.name ? 1 : -1;
+});
+ */
+            display: inline;
+            width:80%;
+        }
+
+    </style>
+</head>
+<div class="container">
+    <div class="container text-center">
+        <h2 class="display-1 mb-5">Movies Ratings</h2>
+        <div class="row">
+           <div class="col-md-4">
+            <label  for="title">
+                Title
+            </label>
+            <input placeholder="Drama Title" class="form-control" type="text" id="title_id">
+            
+           </div>
+           <div class="col-md-4">
+            <label  for="ratings">
+                ratings
+            </label>
+            <input placeholder="Ratings" class="form-control" type="text"  id="ratings">
+            
+           </div>
+           <button  id="add_button" class="btn btn-primary" style="width: 30%;"> Add Drama</button>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    
+                    <td style="width: 40%; text-align: center;"> <button class="btn" id="title_btn">  Title <i class="fas fa-sort"></i>
+                    </button></td>
+                    <td style="width: 20%; text-align : center "> <button class="btn" id="ratings_btn">  Ratings <i class="fas fa-sort"></i> </button></td>
+                    <td style="text-align: center;">Actions</td>
+                </tr>
+    
+            </thead>
+            <tbody id="data_table">
+                
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-
+    16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script>
+        data_array = [];
+$(document).ready(function ()
+{
+    $("#add_button").click(function()
+        {
+            
+            editable = false;
+            console.log($("#ratings").val() + "" + $("#title_id").val());
+            if(isNaN($("#ratings").val()) || $("#ratings").val() >10  || $("#ratings").val() < 0 )
+            {
+                alert('Please Enter Number from 0 to 10  please ')
+
+            }
+            else  if($("#ratings").val()!="" && $("#title_id").val()!="")            
+            {
+                let obj = {name:  $("#title_id").val(),ratings:  $("#ratings").val() }; 
+                data_array.push(obj);
+                display();
+            }
+            else
+            {
+                alert("please enter full data");
+            }
+    });
+    $('#ratings_btn').click(ratings_sort);
+
+    $('#title_btn').click(name_sort);
+
+
+});
+function display()
+{
+    let data = "";
+            let data_1 =  $("#data_table");
+            data_array.forEach( (value,index) =>{
+
+                data+= `
+                
+    <tr id="${index}">
+        <td>${index+1}</td>
+        
+        <td style="width: 40%; text-align : center ">${value.name}</td>
+        <td style="width: 20%; text-align : center ">${value.ratings}</td>
+        <td style="text-align: center;">  <button onclick='delete_item(${index})' class="btn btn-danger">Delete</button>  </td>
+    </tr>
+                `;  
+            } );
+            data_1.html(data);
+
+            $('')
+}
+function delete_item(id)
+        {
+            data_array.splice(id,1);
+            $("#"+id).remove();
+            display();
+
+        }
+
+let n_sort = 1;
+let r_sort = 1;
+
+
+ function ratings_sort() { 
+    if(r_sort%2==1)
+        data_array.sort(function (x, y) { return x.ratings - y.ratings; });
+    else
+        data_array.sort(function (x, y) { return y.ratings - x.ratings; });
+        r_sort++;
+        display();
+    } ;
+ 
+    function name_sort()
+    {
+        if(n_sort%2==0)
+            data_array.sort(function (x, y) { return  x.name == y.name ? 0 : x.name > y.name ? 1 : -1;});
+        else
+            data_array.sort(function (x, y) { return  y.name == x.name ? 0 : y.name > x.name ? 1 : -1;});
+        n_sort++;    
+        display();
+    }
+    </script>
+
+</body>
+</html>

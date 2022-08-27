@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+</head>
+<body>
+    <img src="http://hackasaurus.toolness.org/images/goggles/supergirl.png">
+<p>
+ <button id="clicker">Click me to change the picture</button>
+</p>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+<script>
+    let images = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKhIHcJvjvEhl3gpaHKfdINhgCBQOo1ckZEA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZBf3UtXhrM4HJuH2YtBJe5LmSWLMJk5vH0Q&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8NMi8N7GRxQ8S1ZCZGh5phRaFeP8Z33w-Ag&usqp=CAU"]
+
+    $('#clicker').on('click',function(){
+        let index = Math.floor(Math.random()*3)
+        $('img').attr('src',images[index])
+    })
+</script>
+</body>
+</html>
