@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>JS DOM paragraph style</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <p id='text'>jQuery Exercise</p>
+    <div>
+    <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+
+    <script>
+        function js_style(){
+            $('#text').css({
+                fontSize: 50,
+                fontFamily: "Cursive",
+                color: "Aqua"
+            })
+        }
+    </script>
+</body>
+</html>

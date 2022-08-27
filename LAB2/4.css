@@ -1,0 +1,53 @@
+ body{
+            background-image: url("https://source.unsplash.com/weekly?water");
+        }
+        .container{
+            background-color: rgb(136, 6, 6);
+            height: 65px;
+            border: 10px solid rgb(120, 36, 199);
+            border-radius: 15px;
+            /* border-radius: 2px; */
+        }
+        .container ul{
+            /* overflow: auto; */
+        }
+        .container li{
+            list-style: none;
+            float:left;
+            color: white;
+            padding: 5px;
+            font-size: 17px;
+        }
+        .container li a{
+            padding:19px;
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+        .container li a:hover{
+            text-decoration: underline;
+            color: violet;
+        }
+        .container input{
+            float:right;
+            padding:16px 36px;
+            margin:-8px 67px;
+            border: 10px solid black;
+            border-radius: 6px;
+        }
+        .container input:hover{
+            border: 10px solid black;
+        }
+        .container button{
+            width: 46px;
+            height: 47px;
+            float:right;
+            margin:-8px -364px;
+            background-image: url("search.png");
+            background-size: 45px;
+            background-repeat: no-repeat;
+            border-radius: 6px;
+        }
+        .container button:hover{
+            background-color: rgb(168, 168, 168);
+        }

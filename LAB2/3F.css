@@ -1,0 +1,42 @@
+  .container
+        {
+            width: 800px;
+            height: 400px;
+            background-color: rgb(175, 175, 175);
+            position: relative;
+        }
+        .navbar
+        {
+            padding-top:12px ;
+            width: 160px;
+            /* height: 30px; */
+        }
+        .navbar li
+        {
+            list-style: none;
+            margin-top: 7px;
+            background-color: white;
+            margin-left: -25px;
+            height: 30px;
+            border-right: 15px solid green ;
+            padding-left: 10px;
+            padding-top: 7px;
+        }
+        .h1
+        { 
+            position: absolute;
+            display: inline;
+            text-align: center;
+            top: 0px;
+            left: 200px;
+        }
+        .dive
+        {
+            position: absolute;
+            top:76px;
+            left: 200px;
+        }
+        hr
+        {
+            border: 1px solid gray;
+        }

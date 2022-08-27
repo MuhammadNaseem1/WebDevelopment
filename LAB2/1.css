@@ -1,0 +1,21 @@
+form{background-color:#33ccff;}
+input[type=text] {
+  width: 15;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=password] {
+  width: 15;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.form{
+background-color: #cccc00;
+}
+img{
+border: 5px solid #555;
+}
+.psw{
+background-color:#ffcccc;
